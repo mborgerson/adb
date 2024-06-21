@@ -1,0 +1,47 @@
+enum ReplayAction : byte {
+    Mark,
+    Put,
+    Pop
+}
+
+table ReplayEvent {
+    action: ReplayAction;
+    key: [ubyte];
+    value: [ubyte];
+}
+
+struct Address {
+    space_id: uint16;
+    offset: uint64;
+}
+
+table Function {
+    id: [ubyte];
+    address: Address;
+    name: string;
+    prototype: string;
+    calling_convention: string;
+}
+
+// table Block {
+//     id: [ubyte];
+//     address: Address;
+//     num_bytes: uint64;
+// }
+
+// table CfgNode {
+//     id: [ubyte];
+//     address: Address;
+//     num_bytes: uint64;
+// }
+
+// table CfgEdge {
+//     from_id: [ubyte];
+//     to_id: [ubyte];
+// }
+
+// table Comment {
+//     id: [ubyte];
+//     subject_id: [ubyte];
+//     text: string;
+// }
